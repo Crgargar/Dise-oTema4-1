@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    button:hover {
+        background-color: rgb(141, 141, 253);
+    }
+
+    button{
+        background-color: rgb(238, 109, 109);
+        border-radius: 20px;
+        padding: 10px 10px;
+    }
+
+    legend {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 20px;
+        color:rgb(247, 116, 116)
+    }
+
+    label{
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 20px;
+        color: rgb(139, 139, 252);
+    }
+
+    div{
+        background-color: beige;
+    }
+    h1 {
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color: blueviolet;
+    }
+
+    details {
+        background-color: lavender;
+        border: 1px solid black;
+        padding: 10px;
+    }
+
+    summary {
+        font-size: 18px;
+        font-weight: bold;
+        color: blue;
+    }
+
+    dialog {
+        background-color: lightgray;
+        width: 300px;
+        height: 200px;
+        border: 1px solid black;
+        padding: 10px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+    }
+
+    
+    @-moz-document url-prefix() {
+        /*  Firefox */
+        body {
+            background-color: yellow;
+        }
+    }
+
+    @supports (-webkit-appearance:none) {
+        /*  Chrome, Safari y Edge */
+        body {
+            background-color: cyan;
+        }
+    }
+
+
+</style>
+</head>
+
+<body>
+    <form action="">
+    <div>
+        <h1>Ejercicio de Clase</h1>
+        <label for="name">Nombre: </label>
+        <input type="text" required>
+        <label for="Apellidos">Apellidos: </label>
+        <input type="text" required>
+        <br><br>
+        <legend>Estado civil: </legend>
+            <a>S</a><input type="checkbox">
+            <a>C</a><input type="checkbox">
+        <br><br>
+        <label for="gender">Género:</label>
+        <select id="gender" required>
+            <option value="">Seleccione una opción</option>
+            <option value="male">Masculino</option>
+            <option value="female">Femenino</option>
+            <option value="other">Otro</option>
+        </select>
+        <br><br>
+            <label>Fecha:</label>
+            <input type="date">
+        <br><br>
+        <label for="edad">Edad:</label>
+        <input type="number" min="18" max="99" value="18">
+        <br><br>
+        <button type="submit">Enviar</button>
+        <details>
+            <summary>Mostrar informacion</summary>
+            <p>Informacion mostrada</p>
+        </details>
+        <button type="button" onclick="mostrarDialog()">Mostrar diálogo</button>
+    </div>
+  </form>
+
+    <dialog id="dialogo">
+        <h2>Este es un diálogo interactivo</h2>
+        <p>Puedes agregar cualquier contenido aquí.</p>
+        <button type="button" onclick="cerrarDialog()">Cerrar</button>
+    </dialog>
+
+    <script>
+        const miDialogo = document.querySelector('#dialogo');
+
+        function mostrarDialog() {
+        miDialogo.showModal();
+        }
+
+        function cerrarDialog() {
+        miDialogo.close();
+        }
+    </script>
+    </div>
+    </form>
+</body>
+</html>
